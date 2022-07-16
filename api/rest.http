@@ -1,0 +1,127 @@
+### live server test
+GET http://localhost:8000
+
+# ========= Admin registraion and login
+
+### Admin user registration
+POST http://localhost:8000/api/v1/register-login
+Content-Type: application/json
+
+{
+    "fName": "Prem",
+    "lName": "Acharya",
+    "dob":  "2020-02-20",
+    "phone":"044444444",
+    "email" : "a@a1.com",
+    "password": "123456",
+    "address": "somewhere in sydeny"
+}
+
+
+
+### Admin user registration
+PATCH http://localhost:8000/api/v1/register-login
+Content-Type: application/json
+
+{
+    "email" : "garry@gmail.com",
+    "verificationCode" : "b264bf3c-d350-4806-bbfa-d17c0d1b1fd3"
+}
+
+### Admin login
+
+POST http://localhost:8000/api/v1/register-login/login
+Content-Type: application/json
+
+{
+    "email" : "a@a1.com",
+    "password": "123456"
+}
+
+# ============= category api
+
+### fetch categories 
+GET http://localhost:8000/api/v1/categories/
+
+
+### post category
+POST http://localhost:8000/api/v1/categories/
+Content-Type: application/json
+
+{
+    "status": "inactive",
+    "name": "Mobile Phonesdfg",
+    "parentCatId": "62c121527362772a2d1e2316"
+    
+}
+
+### update category
+PUT http://localhost:8000/api/v1/categories/
+Content-Type: application/json
+
+{
+    "_id": "62c122254be8ca0bf044e61e",
+    "status": "active",
+    "name": "Mobile Phones",
+    "parentCatId": null
+    
+}
+
+### delete categories
+DELETE  http://localhost:8000/api/v1/categories/
+Content-Type: application/json
+
+{
+   "ids" : [
+    "62c8c544428500967742d3d9"
+   ]
+    
+}
+
+#=========================payment method api
+###fetch payment methods
+GET http://localhost:8000/api/v1/payment-method
+
+###fetch payment methods
+POST  http://localhost:8000/api/v1/payment-method
+Content-Type: application/json
+{
+    "status": "inactive",
+    "name" : "Pay By Bank Transfer",
+    "description": "Please EFT to the following accounts, BSB:33333, A/C: 12345 and put order id as reference",
+
+}
+
+###fetch payment methods
+POST  http://localhost:8000/api/v1/payment-method
+Content-Type: application/json
+{
+    "status": "inactive",
+    "name" : "Pay By payID",
+    "description": "Please EFT to the following accounts, BSB:33333, 
+    A/C: 12345 and put order id as reference"
+
+}
+
+###fetch payment methods
+POST  http://localhost:8000/api/v1/payment-method
+Content-Type: application/json
+{
+    "status": "inactive",
+    "name" : "Pay By CreditCard",
+    "description": "Please EFT to the following accounts, BSB:33333, 
+    A/C: 12345 and put order id as reference"
+
+}
+
+###fetch payment methods
+PUT  http://localhost:8000/api/v1/payment-method
+Content-Type: application/json
+
+{
+
+}
+
+
+###fetch payment methods
+DELETE  http://localhost:8000/api/v1/payment-method/_idofthepaymentmethod
