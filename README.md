@@ -6,7 +6,7 @@ This is a CMS (Content Management System) project using React & NodeJS. Notice t
 
 The project requires npm and NodeJS installed
 
-### Build Project
+## Build Project
 1. CD into api
 2. CD into client
 3. Install npx: `npm install npx`
